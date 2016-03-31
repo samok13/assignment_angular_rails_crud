@@ -31,7 +31,9 @@ pinboard.controller('pinCtrl', ['$scope', 'pinService', function($scope, pinServ
         user_id: 1
       } };
 
-      pinService.createPin(pinObj);
+      pinService.createPin(pinObj).then(function(response){
+        $scope.pins.unshift(response);
+      });
     }
   };
 

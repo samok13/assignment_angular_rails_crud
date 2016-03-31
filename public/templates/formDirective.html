@@ -1,5 +1,5 @@
 <h1> New Pin </h1>
-<form name="pinForm" ng-submit="processForm(pinForm.$valid)" class="form-group">
+<form name="pinForm" ng-submit="processForm({isvalid: pinForm.$valid})" class="form-group">
   <label>
     Title <input type="text" class="form-control" ng-model="formData.itemName" required>
   </label>

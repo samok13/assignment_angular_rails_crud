@@ -6,9 +6,7 @@ pinboard.directive('formDirective', function(){
     restrict: "E",
     scope: {
       processForm: '&',
-      formData['itemName']: '=',
-      formData['buySell']: '=',
-      formData['description']: '='
+      formData: '@'
     }
   };
 

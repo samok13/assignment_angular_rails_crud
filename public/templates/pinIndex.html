@@ -1,4 +1,6 @@
 <h1> New Pin </h1>
+<!-- <form-directive process-form="processForm(isValid)" form-data="formData" ></form-directive> -->
+
 <form name="pinForm" ng-submit="processForm(pinForm.$valid)" class="form-group">
   <label>
     Title <input type="text" class="form-control" ng-model="formData.itemName" required>
@@ -18,6 +20,7 @@
   <br>
   <button type="submit">Create Pin</button>
 </form>
+
 
 <div ng-repeat="pin in pins">
   <div class="row">

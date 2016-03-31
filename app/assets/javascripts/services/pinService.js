@@ -5,8 +5,7 @@ pinboard.factory('pinService', ['Restangular', function(Restangular){
   };
 
   var createPin = function(pinObj) {
-    console.log(pinObj);
-    Restangular.all('pins').post(pinObj);
+    return Restangular.all('pins').post(pinObj);
   };
 
   return{
