@@ -1,5 +1,32 @@
-<h1>Hello World</h1>
+<h1> New Pin </h1>
+<form name="pinForm" ng-submit="processForm(pinForm.$valid)" class="form-group">
+  <label>
+    Title <input type="text" class="form-control" ng-model="formData.itemName" required>
+  </label>
+  <br>
+  <label>
+    Buy/Sell?
+    <select ng-model="formData.buySell" required>
+      <option value="buy">Want to Buy</option>
+      <option value="sell">Want to Sell</option>
+    </select>
+  </label>
+  <br>
+  <label>
+    Description <textarea type="text" class="form-control" ng-model="formData.description" required></textarea>
+  </label>
+  <br>
+  <button type="submit">Create Pin</button>
+</form>
 
-<form-directive></form-directive>
+<div ng-repeat="pin in pins">
+  <div class="row">
+    <div class="col-xs-12">
+      <h3>{{ pin.item_name }}</h3>
+      <h4 style="color: {{ color }}">{{ buySell(pin.buy_sell) }}</h4>
+      <p>{{ pin.description }}</p>
+      <p>posted on {{ pin.created_at | date }} by {{ pin.user.username }}</p>
+    </div>
+  </div>
 
-
+</div>

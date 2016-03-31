@@ -4,7 +4,12 @@ pinboard.directive('formDirective', function(){
   return{
     templateUrl: "/templates/formDirective.html",
     restrict: "E",
-    scope: {}
+    scope: {
+      processForm: '&',
+      formData['itemName']: '=',
+      formData['buySell']: '=',
+      formData['description']: '='
+    }
   };
 
 });
