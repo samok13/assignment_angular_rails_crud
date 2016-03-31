@@ -9,8 +9,21 @@ pinboard.config(['$stateProvider', '$urlRouterProvider', function($stateProvider
       url: '',
       templateUrl: 'templates/pinIndex.html',
       controller: 'pinCtrl'
-    });
+    })
+
+    .state('show', {
+      url: '/show' ,
+      templateUrl: 'templates/showPin.html',
+      controller: 'pinCtrl',
+      params:{
+        pin: null,
+      },
+    })
+
+
 }]);
+
+
 
 pinboard.config(['RestangularProvider', function(RestangularProvider){
   RestangularProvider.setBaseUrl('/api/v1');

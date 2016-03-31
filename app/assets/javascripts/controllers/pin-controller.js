@@ -1,15 +1,16 @@
-pinboard.controller('pinCtrl', ['$scope', 'pinService', function($scope, pinService){
+pinboard.controller('pinCtrl', ['$scope', 'pinService', '$stateParams', function($scope, pinService, $stateParams){
 
   $scope.pins = pinService.getPins();
-  $scope.color = 'red';
+  $scope.color = 'green';
   $scope.formData = {};
+  $scope.pin = $stateParams.pin;
 
   $scope.buySell = function(bool) {
     if (bool) {
-      $scope.color = 'green';
+      //$scope.color = 'green';
       return "For Sale";
     } else {
-      $scope.color = 'red';
+      //$scope.color = 'red';
       return "Want to Buy";
     }
   };

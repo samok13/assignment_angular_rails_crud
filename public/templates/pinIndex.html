@@ -25,7 +25,7 @@
 <div ng-repeat="pin in pins">
   <div class="row">
     <div class="col-xs-12">
-      <h3>{{ pin.item_name }}</h3>
+      <h3><a ui-sref="show({pin:{{pin}} })">{{ pin.item_name }}</a></h3>
       <h4 style="color: {{ color }}">{{ buySell(pin.buy_sell) }}</h4>
       <p>{{ pin.description }}</p>
       <p>posted on {{ pin.created_at | date }} by {{ pin.user.username }}</p>
