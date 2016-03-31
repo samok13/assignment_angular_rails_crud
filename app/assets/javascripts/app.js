@@ -1,0 +1,1 @@
+yourApp = angular.module('yourApp', ['ui.router', 'lodash', 'underscore', 'restangular'])
