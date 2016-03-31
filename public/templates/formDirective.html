@@ -1,0 +1,22 @@
+
+
+<h1> New Pin </h1>
+<form name="pinForm" ng-submit=processForm(pinForm.$valid)>
+  <label>
+    Title <input type="text" required>
+  </label>
+  <br>
+  <label>
+    Buy/Sell? 
+    <select ng-model="buySell"> 
+      <option value="buy">Want to Buy</option> 
+      <option value="sell">Want to Sell</option> 
+    </select>
+  </label>
+  <br>
+  <label>
+    Description <textarea required></textarea>
+  </label>
+  <br>
+  <button type="submit">Create Pin</button>
+</form>

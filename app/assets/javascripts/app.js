@@ -1,18 +1,30 @@
 pinboard = angular.module('pinboard', ['ui.router', 'restangular']);
 
-pinboard.config(function($stateProvider, $urlRouterProvider){
+pinboard.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
 
-  $urlRouterProvider.otherwise('/post');
+  $urlRouterProvider.otherwise('');
 
   $stateProvider
     .state('pinboard', {
-      url: '/post',
-      templateUrl: 'templates/hello.html',
-      controller: 'testCtrl'
+      url: '',
+      templateUrl: 'templates/pinIndex.html',
+      controller: 'pinCtrl'
     });
-});
-
-pinboard.controller('testCtrl', ['$scope', function($scope){
-  $scope.testProp = "hola";
-  $scope.hello = "hi";
 }]);
+
+pinboard.config(['RestangularProvider', function(RestangularProvider){
+  RestangularProvider.setBaseUrl('/api/v1');
+  RestangularProvider.setRequestSuffix('.json');
+  RestangularProvider.setDefaultHttpFields({
+    "content-type": "application/json"
+  });
+  //what is 'operation', enabling this doesn't work..
+  // RestangularProvider.setResponseExtractor(function(response){
+  //   return response.data
+  // });
+}]);
+
+// pinboard.controller('testCtrl', ['$scope', function($scope){
+//   $scope.testProp = "hola";
+//   $scope.hello = "hi";
+// }]);
