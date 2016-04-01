@@ -5,6 +5,7 @@ pinboard.controller('pinCtrl', ['$scope', 'pinService', '$stateParams', function
   $scope.formData = {};
   $scope.pin = $stateParams.pin;
 
+
   $scope.buySell = function(bool) {
     if (bool) {
       //$scope.color = 'green';
@@ -18,7 +19,7 @@ pinboard.controller('pinCtrl', ['$scope', 'pinService', '$stateParams', function
   $scope.processForm = function(formIsValid) {
 
     if (formIsValid) {
-      console.log('form gets here');
+ 
       var bool = '';
       if ($scope.formData.buySell == 'sell') {
         bool = true;

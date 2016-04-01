@@ -17,7 +17,16 @@ pinboard.config(['$stateProvider', '$urlRouterProvider', function($stateProvider
       controller: 'pinCtrl',
       params:{
         pin: null,
-      },
+      }
+    })
+
+    .state('edit', {
+      url:'/edit',
+      templateUrl: 'templates/editPin.html',
+      controller: 'editCtrl',
+      params:{
+        pin: null,
+      }
     })
 
 

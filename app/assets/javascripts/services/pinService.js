@@ -8,9 +8,16 @@ pinboard.factory('pinService', ['Restangular', function(Restangular){
     return Restangular.all('pins').post(pinObj);
   };
 
+  var updatePin = function(id){
+    return Restangular.one('pins', id).get();
+  };
+
   return{
     getPins: getPins,
-    createPin: createPin
+    createPin: createPin,
+    updatePin: updatePin
   };
+
+
 
 }]);

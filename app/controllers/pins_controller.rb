@@ -20,7 +20,26 @@ class PinsController < ApplicationController
       end
     end
   end
-  
+
+  def update
+    @pin = Pin.find(params[:id])
+
+    respond_to do |format|
+      if @pin.update(whitelisted_params)
+        format.json { render json: @pin.to_json }
+      else
+        format.json { render json: @pin.to_json, status: 422 }
+      end
+    end
+  end
+
+  def show
+    @pin = Pin.find(params[:id])
+
+    respond_to do |format|
+      format.json{render json: @pin.to_json}
+    end
+  end
 
 
   private
